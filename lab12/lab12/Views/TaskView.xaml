@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab12.Views.TaskView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Title" FontAttributes="Bold" FontSize="Title"/>
+            <Entry FontSize="20" Text="{Binding Title}"></Entry>
+            <Label Text="Description" FontAttributes="Bold" FontSize="Title"/>
+            <Entry FontSize="20" Text="{Binding Description}"></Entry>
+            <StackLayout RadioButtonGroup.GroupName="isCompleted"
+             RadioButtonGroup.SelectedValue="{Binding IsCompleted}">
+                <Label Text="Status" FontAttributes="Bold" FontSize="Title" />
+                <RadioButton Value="True" Content="yes" />
+                <RadioButton Value="False" Content="no"/>
+            </StackLayout>
+            <Button Text="Save" FontSize="Title" BackgroundColor="White" Command="{Binding Save}"/>
+            <Button Text="Get" FontSize="Title" BackgroundColor="White" Command="{Binding Get}"/>
+            <ListView x:Name="tasks" ItemsSource="{Binding TaskModels}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                                <StackLayout>
+                                <Label Text="{Binding Title}"
+                                       FontSize="13"
+                                       HorizontalOptions="FillAndExpand"/>
+                                    
+                                <Label Text="{Binding Description}"
+                                       FontSize="13"
+                                       HorizontalOptions="FillAndExpand"/>
+
+                                    <Label Text="{Binding IsCompleted}"
+                                       FontSize="11"
+                                     HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -37,8 +37,8 @@ namespace lab12.ViewModels
             }
         }
 
-        bool isCompleted;
-        public bool IsCompleted
+        string isCompleted;
+        public string IsCompleted
         {
             get { return isCompleted; }
             set
@@ -84,7 +84,7 @@ namespace lab12.ViewModels
             );
             Get = new Command(() =>
             {
-                Tasks = new ObservableCollection<TaskModel>();
+                Tasks = new ObservableCollection<TaskModel>(TaskModels);
             });
         }
     }

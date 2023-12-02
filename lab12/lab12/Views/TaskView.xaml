@@ -8,11 +8,11 @@
             <Entry FontSize="20" Text="{Binding Title}"></Entry>
             <Label Text="Description" FontAttributes="Bold" FontSize="Title"/>
             <Entry FontSize="20" Text="{Binding Description}"></Entry>
-            <StackLayout RadioButtonGroup.GroupName="isCompleted"
-             RadioButtonGroup.SelectedValue="{Binding IsCompleted}">
+            <StackLayout>
                 <Label Text="Status" FontAttributes="Bold" FontSize="Title" />
-                <RadioButton Value="True" Content="yes" />
-                <RadioButton Value="False" Content="no"/>
+            
+                <RadioButton GroupName="isCompleted" Content="Yes" IsChecked="{Binding IsCompleted, Mode=TwoWay}" />
+                <RadioButton GroupName="isCompleted" Content="No" IsChecked="{Binding IsCompleted, Mode=TwoWay}" />
             </StackLayout>
             <Button Text="Save" FontSize="Title" BackgroundColor="White" Command="{Binding Save}"/>
             <Button Text="Get" FontSize="Title" BackgroundColor="White" Command="{Binding Get}"/>
@@ -29,7 +29,7 @@
                                        FontSize="13"
                                        HorizontalOptions="FillAndExpand"/>
 
-                                    <Label Text="{Binding IsCompleted}"
+                                <Label Text="Status: {Binding IsCompleted}"
                                        FontSize="11"
                                      HorizontalOptions="FillAndExpand"/>
                                 </StackLayout>

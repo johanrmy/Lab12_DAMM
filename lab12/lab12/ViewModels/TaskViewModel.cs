@@ -66,7 +66,6 @@ namespace lab12.ViewModels
         public ICommand Save { protected set; get; }
         public ICommand Get { protected set; get; }
 
-
         private List<TaskModel> TaskModels;
         public TaskViewModel() { 
             Tasks = new ObservableCollection<TaskModel>();
@@ -75,9 +74,9 @@ namespace lab12.ViewModels
             Save = new Command(() =>
             {
                 TaskModel task = new TaskModel();
-                task.title = this.Title;
-                task.description = this.Description;
-                task.isCompleted = this.IsCompleted;
+                task.Title = this.Title;
+                task.Description = this.Description;
+                task.IsCompleted = this.IsCompleted;
                 TaskModels.Add(task);
                 Console.WriteLine(TaskModels.Count);
             }

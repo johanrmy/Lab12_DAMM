@@ -16,7 +16,7 @@
             </StackLayout>
             <Button Text="Save" FontSize="Title" BackgroundColor="White" Command="{Binding Save}"/>
             <Button Text="Get" FontSize="Title" BackgroundColor="White" Command="{Binding Get}"/>
-            <ListView x:Name="tasks" ItemsSource="{Binding TaskModels}">
+            <ListView x:Name="tasks" ItemsSource="{Binding Tasks}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

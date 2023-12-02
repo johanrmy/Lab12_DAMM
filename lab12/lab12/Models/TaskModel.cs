@@ -6,10 +6,9 @@ namespace lab12.Models
 {
     public class TaskModel
     {
-        public int Id { get; set; }
-        public String title { get; set; }
-        public String description { get; set; }
-        public string isCompleted { get; set; }
+        public String Title { get; set; }
+        public String Description { get; set; }
+        public string IsCompleted { get; set; }
 
         public TaskModel() { }
 
